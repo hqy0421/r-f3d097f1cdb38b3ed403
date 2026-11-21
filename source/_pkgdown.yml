@@ -78,6 +78,7 @@ reference:
     contents:
       - loo_predictive_metric
       - crps
+      - loo_excess_crps
       - elpd
       - waic
       - extract_log_lik

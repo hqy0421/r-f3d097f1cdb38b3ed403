@@ -1,5 +1,13 @@
 # loo (development version)
 
+* New function `loo_excess_crps()` for leave-one-out CRPS of the amount by
+which predictions and observations exceed an observation-specific capacity
+(zero below the capacity). It uses a single set of predictive draws with the
+matching log-likelihood, PSIS weights, and an exact sort/cumulative-sum
+computation of the pairwise absolute-difference term (no random pairing or
+pairwise matrices; exact with ties and many zeros). Returns pointwise scores,
+aggregate estimate and standard error, and PSIS diagnostics. The existing
+`loo_crps()` entry point is unchanged.
 * Handle errors of the user functions in `loo_moment_match()` by @avehtari in #410
 * Allow different numbers of draws in `loo_model_weights()` by @avehtari in #409
 * Improve numerical stability in `loo()`, `psis()`, model weighting, subsampling, 
